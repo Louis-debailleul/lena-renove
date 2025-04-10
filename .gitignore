@@ -15,7 +15,7 @@
 .cursorrules
 # next.js
 /.next/
-/out/
+# /out/ - We need this for deployment
 
 # production
 /build
