@@ -28,8 +28,8 @@ Passionnée par la rénovation, l'architecture  et le travail bien fait ! Je ré
         {/* Image portrait - optimisée pour différentes tailles d'écran */}
 
         <div className="sm:flex sm:flex-row-reverse items-center lg:items-start">
-          <div className="mb-6  sm:w-2/4 lg:w-3/5">
-            <h2 className="text-2xl sm:text-4xl font-semibold pl-3 lg:text-3xl">
+          <div className="mb-6 sm:w-2/4 lg:w-3/5">
+            <h2 className="text-2xl sm:text-5xl font-semibold pl-3 lg:text-3xl">
               {profil.title}
             </h2>
             <div
@@ -49,7 +49,7 @@ Passionnée par la rénovation, l'architecture  et le travail bien fait ! Je ré
           </div>
         </div>
 
-        <div className="relative w-z-10 flex w-4/5 ml-[20%] -mt-10 p-3 lg:p-6 text-center text-lg lg:text-xl bg-primary sm:rounded-br-[50px] shadow-lg items-center justify-evenly">
+        <div className="relative w-z-10 flex w-4/5 ml-[20%] -mt-10 p-3 lg:p-6 text-center text-lg lg:text-xl bg-primary sm:rounded-br-[50px] shadow-sm items-center justify-evenly">
           <span className="font-bold">
             10 ans <br /> d'expérience
           </span>
@@ -60,9 +60,9 @@ Passionnée par la rénovation, l'architecture  et le travail bien fait ! Je ré
         </div>
 
         {/* Contenu - adapté pour compléter l'image portrait */}
-        <div className="flex flex-col w-full lg:hidden">
+        <div className="flex flex-col lg:hidden sm:w-4/5 sm:ml-[20%] p-3">
           <div
-            className="text-lg w-full h-auto  px-2"
+            className="text-lg w-full h-auto"
             dangerouslySetInnerHTML={{ __html: profil.content }}
           ></div>
         </div>

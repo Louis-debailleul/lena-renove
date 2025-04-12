@@ -27,17 +27,51 @@ const AfterBefore = ({ afterImage, beforeImage }) => {
     setIsDragging(false);
   };
 
+  const handleMouseLeave = (event) => {
+    event.stopPropagation();
+    setIsDragging(false);
+  };
+
+  const handleTouchStart = (event) => {
+    event.stopPropagation();
+    setIsDragging(true);
+  };
+
+  const handleTouchMove = (event) => {
+    event.stopPropagation();
+    if (!isDragging) return;
+
+    const rect = event.currentTarget.getBoundingClientRect();
+    const touch = event.touches[0];
+    const x = Math.max(0, Math.min(touch.clientX - rect.left, rect.width));
+    const percent = Math.max(0, Math.min((x / rect.width) * 100, 100));
+
+    setSliderPosition(percent);
+  };
+
+  const handleTouchEnd = (event) => {
+    event.stopPropagation();
+    setIsDragging(false);
+  };
+
   return (
-    <div className="w-full relative" onMouseUp={handleMouseUp}>
+    <div
+      className="w-full overflow-hidden flex justify-center items-center"
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseLeave}
+    >
       <div
-        className="relative w-full aspect-[70/45] m-auto overflow-hidden select-none"
+        className="relative w-full aspect-[70/45] m-auto overflow-hidden select-none rounded-lg"
         onMouseMove={handleMove}
         onMouseDown={handleMouseDown}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         <Image alt="" fill draggable={false} priority src={afterImage} />
 
         <div
-          className="absolute top-0 left-0 right-0 w-full max-w-[700px] aspect-[70/45] m-auto overflow-hidden select-none"
+          className="absolute top-0 left-0 right-0 w-full aspect-[70/45] m-auto overflow-hidden select-none"
           style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
         >
           <Image fill priority draggable={false} alt="" src={beforeImage} />

@@ -19,9 +19,9 @@ const Project = () => {
   };
 
   return (
-    <div className="container mx-auto shadow-lg rounded-lg bg-primary p-3 sm:p-4 lg:p-6 w-full lg:w-10/12">
+    <div className="mx-auto shadow-lg rounded-lg bg-primary p-3 sm:p-4 lg:p-6 w-full lg:w-10/12">
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="rounded-lg  lg:ml-[-100px] overflow-hidden ">
+        <div className="rounded-lg flex justify-center lg:ml-[-100px] overflow-hidden">
           <AfterBefore
             afterImage="/images/project/p1.png"
             beforeImage="/images/project/p2.png"
@@ -29,18 +29,18 @@ const Project = () => {
           />
         </div>
 
-        <div className="flex flex-col justify-center">
-          <h2 className="text-2xl font-bold my-3 order-1">
+        <div className="flex flex-col justify-center p-6">
+          <h2 className="text-2xl font-bold mb-3 order-1">
             Projet de chambre et salle de bain
           </h2>
-          <p className="text-gray-500 my-3 order-3">
+          <p className="text-gray-500 mb-3 order-3 lg:order-2 lg:mb-6">
             Mon client a fait "Wahou" lorsqu'il est rentré et c'est exactement
             l'effet que je recherche en fin de chantier ! Techniquement, ce
             chantier était assez compliqué car les murs étaient tout sauf saint.
             Cependant j'ai accomplis ma mission ! Et toi tu en penses quoi ? :)
           </p>
 
-          <div className="flex gap-4 overflow-auto order-2 h-28">
+          <div className="flex gap-4 overflow-auto order-2 lg:order-3 pb-3">
             <Image
               src="/images/project/p2.png"
               width={190}

@@ -16,8 +16,8 @@ const Reviews = () => {
         />
       </div>
 
-      <div className="flex items-center justify-center flex-col md:flex-row gap-4 mb-10">
-        <div className="w-4/5 p-6 flex flex-col relative  bg-white rounded-xl ">
+      <div className="flex items-center justify-center flex-col xl:flex-row gap-4 mb-10 px-5">
+        <div className=" max-w-lg p-6 flex flex-col relative bg-white rounded-xl ">
           <div className="flex items-center gap-2">
             <Avatar>
               {<AvatarImage src="https://github.com/shadcn.png" />}
@@ -41,7 +41,7 @@ const Reviews = () => {
             ridiculus mus "
           </p>
         </div>
-        <div className="w-4/5 p-6 flex flex-col relative bg-white rounded-xl ">
+        <div className=" max-w-lg p-6 flex flex-col relative bg-white rounded-xl ">
           <div className="flex items-center gap-2">
             <Avatar>
               <AvatarImage src="https://github.com/shadcn.png" />
@@ -65,7 +65,7 @@ const Reviews = () => {
             ridiculus mus "
           </p>
         </div>
-        <div className="w-4/5 p-6 flex flex-col relative bg-white rounded-xl ">
+        <div className="max-w-lg p-6 flex flex-col relative bg-white rounded-xl ">
           <div className="flex items-center gap-2">
             <Avatar>
               <AvatarImage src="https://github.com/shadcn.png" />
