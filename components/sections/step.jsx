@@ -84,7 +84,7 @@ export default function Step() {
         />
       </div> */}
       <div className="relative z-10 w-full mx-auto">
-        <h2 className="text-center text-4xl pb-6  ">
+        <h2 className="text-center text-4xl pb-6 text-primary-200">
           LES ETAPES DE VOTRE PROJET
         </h2>
         <ContentTextDecor className="max-w-screen-2xl w-4/5 mx-auto">
@@ -95,16 +95,17 @@ export default function Step() {
           sem, molestie dui.{" "}
         </ContentTextDecor>
         <div className="flex justify-center my-16">
-          <Card className="relative max-w-80 p-6 pt-11  ">
-            <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full w-24 h-24 bg-secondary text-center  place-content-center ">
-              <span className="material-symbols-outlined text-gray-100 text-5xl">
+          <Card className="relative max-w-80 p-8 pt-16 h-[300px] flex flex-col border-0">
+            <div className="shadow absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full w-24 h-24 bg-secondary text-center place-content-center">
+              <span className="material-symbols-outlined text-secondary-100 text-5xl">
                 {steps[0].icon}
               </span>
             </div>
-            <CardHeader>
+            <CardHeader className="px-0 pt-4">
               <CardTitle className="text-xl">{steps[0].title}</CardTitle>
             </CardHeader>
             <CardContent
+              className="px-0 flex-grow"
               dangerouslySetInnerHTML={{ __html: steps[0].content }}
             />
           </Card>
@@ -112,17 +113,20 @@ export default function Step() {
         <div className="flex justify-center flex-wrap items-center gap-x-6 gap-y-16">
           {steps.slice(1).map((item, index) => (
             <>
-              <Card key={index} className={`relative max-w-80 p-6 pt-11`}>
-                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full w-24 h-24 bg-secondary text-center  place-content-center ">
-                  <span className="material-symbols-outlined text-gray-100 text-5xl">
+              <Card
+                key={index}
+                className="relative max-w-80 p-8 pt-16 h-[300px] flex flex-col border-0"
+              >
+                <div className="shadow absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full w-24 h-24 bg-secondary text-center place-content-center">
+                  <span className="material-symbols-outlined text-secondary-100 text-5xl">
                     {item.icon}
                   </span>
                 </div>
-                <CardHeader>
+                <CardHeader className="px-0 pt-4">
                   <CardTitle className="text-xl">{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent
-                  className="text-gray-100 text-lg"
+                  className="px-0 text-gray-100 text-lg flex-grow"
                   dangerouslySetInnerHTML={{ __html: item.content }}
                 />
               </Card>

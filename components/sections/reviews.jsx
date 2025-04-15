@@ -4,8 +4,8 @@ import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 const Reviews = () => {
   return (
-    <div className="relative bg-secondary rounded-xl py-10">
-      <h2 className="text-center text-4xl my-10">Avis clients</h2>
+    <div className="relative bg-secondary rounded-xl pt-10 pb-24">
+      <h2 className="text-center text-4xl my-10">Ce qu'on dit de moi</h2>
       <div className="absolute top-[50px] left-[50px] text-8xl">
         <FormatQuoteIcon fontSize="inherit" className="text-gray-100" />
       </div>
@@ -17,7 +17,7 @@ const Reviews = () => {
       </div>
 
       <div className="flex items-center justify-center flex-col xl:flex-row gap-4 mb-10 px-5">
-        <div className=" max-w-lg p-6 flex flex-col relative bg-white rounded-xl ">
+        <div className=" max-w-lg p-6 flex flex-col relative bg-white rounded-xl shadow">
           <div className="flex items-center gap-2">
             <Avatar>
               {<AvatarImage src="https://github.com/shadcn.png" />}
@@ -41,7 +41,7 @@ const Reviews = () => {
             ridiculus mus "
           </p>
         </div>
-        <div className=" max-w-lg p-6 flex flex-col relative bg-white rounded-xl ">
+        <div className=" max-w-lg p-6 flex flex-col relative bg-white rounded-xl shadow">
           <div className="flex items-center gap-2">
             <Avatar>
               <AvatarImage src="https://github.com/shadcn.png" />
@@ -65,7 +65,7 @@ const Reviews = () => {
             ridiculus mus "
           </p>
         </div>
-        <div className="max-w-lg p-6 flex flex-col relative bg-white rounded-xl ">
+        <div className="max-w-lg p-6 flex flex-col relative bg-white rounded-xl shadow">
           <div className="flex items-center gap-2">
             <Avatar>
               <AvatarImage src="https://github.com/shadcn.png" />

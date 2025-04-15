@@ -8,11 +8,11 @@ import { GradualSpacing } from "../components/animations/gradualSpacing";
 
 export default function Home() {
   return (
-    <div className="mx-auto px-1 md:px-4 lg:px-6">
-      <ImgContent className="lg:h-[650px]" imgName={"headerhome.jpg"}>
+    <div className="mx-auto px-4 lg:px-6">
+      <ImgContent className="h-[350px] lg:h-[650px]" imgName={"headerhome.jpg"}>
         <h1
-          className="text-6xl mx-auto text-white my-28
-        pt-12 w-full max-w-screen-md"
+          className="bg-black/20  rounded-lg backdrop-blur-sm  p-5 text-6xl mx-auto text-white 
+         w-full max-w-screen-md"
         >
           <GradualSpacing text="Ensemble, redonnons du style au durable !" />
         </h1>

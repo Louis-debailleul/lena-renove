@@ -47,8 +47,8 @@ export default function MainNav() {
       }`}
     >
       <NavigationMenu
-        className={`-mb-10 mt-5 flex w-full max-w-full justify-between bg-primary-100 md:px-6 px-2 mx-auto transition-all duration-300 ${
-          isScrolled ? "shadow-none" : "rounded-full shadow-xl"
+        className={`-mb-10 mt-5 flex w-full max-w-full justify-between bg-primary  md:px-6 px-2 mx-auto transition-all duration-300 ${
+          isScrolled ? "shadow-none" : "rounded-full shadow"
         }`}
       >
         <Link href="#projects" className="md:hidden">
@@ -96,7 +96,7 @@ export default function MainNav() {
             <Link href="#skills">Professionnel</Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Button className="bg-gray-200 text-white">
+            <Button className="bg-secondary text-secondary-100">
               <Link
                 href="#contact"
                 className="NavigationMenuLink text-sm md:text-xl flex items-center gap-2"

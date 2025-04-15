@@ -8,6 +8,7 @@ import ImgContent from "../imgContent";
 import StepBar from "./stepBar";
 import emailjs from "emailjs-com";
 import { FORM_OPTIONS } from "./constForm";
+import { motion, AnimatePresence } from "framer-motion";
 
 // Import des composants du Form de shadcn/ui
 import {
@@ -131,6 +132,7 @@ const step3Schema = z
 
 function MultiStepForm() {
   const [step, setStep] = useState(1);
+  const [direction, setDirection] = useState(1);
   const [allData, setAllData] = useState({});
 
   const methods = useForm({
@@ -165,11 +167,13 @@ function MultiStepForm() {
   const formRef = useRef(null);
 
   const onNext = (data) => {
+    setDirection(1);
     setAllData((prev) => ({ ...prev, ...data }));
     setStep((prev) => prev + 1);
   };
 
   const onPrevious = () => {
+    setDirection(-1);
     setStep((prev) => prev - 1);
   };
 
@@ -199,6 +203,10 @@ function MultiStepForm() {
       phone: finalData.phone,
     };
     console.log(templateParams);
+    setStep(4);
+    if (errors.length > 0) {
+      setStep(5);
+    }
     /*     emailjs
       .send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
@@ -224,45 +232,102 @@ function MultiStepForm() {
     console.log("Erreurs de validation:", errors); */
   };
 
+  const variants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction) => ({
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+    }),
+  };
+
   return (
     <div className="w-full relative mx-auto">
-      {step > 1 && <StepBar currentStep={step} />}
+      {step > 1 && step <= 4 && <StepBar currentStep={step} />}
       {step === 1 && (
-        <>
-          <h2 className="text-2xl font-bold text-center">
-            Obtenez un devis gratuit
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-2xl font-bold mb-3">
+            Contacter moi en quelques clics
           </h2>
-          <p className=" text-gray-500 max-w-[600px] mx-auto mb-6">
+          <p className="text-gray-500 max-w-[600px] mx-auto mb-6">
             Prenez quelques secondes pour remplir ce questionnaire rapide. Il me
             permettra de mieux comprendre vos besoins et de vous faire gagner du
             temps pour la suite de votre projet. Grâce à ces informations, je
             pourrai adapter mes services à vos besoins et budget.
           </p>
-        </>
+        </motion.div>
       )}
       <FormProvider {...methods}>
         <form
           className="space-y-4"
           onSubmit={methods.handleSubmit(step < 3 ? onNext : onSubmitFinal)}
         >
-          {step === 1 && <FormGeneralInfo methods={methods} />}
+          <AnimatePresence initial={false} custom={direction} mode="wait">
+            <motion.div
+              key={step}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.2 },
+              }}
+            >
+              {step === 1 && <FormGeneralInfo methods={methods} />}
+              {step === 2 && <FormProjectDetails methods={methods} />}
+              {step === 3 && <FormPlanning methods={methods} />}
+            </motion.div>
+          </AnimatePresence>
 
-          {step === 2 && <FormProjectDetails methods={methods} />}
-
-          {step === 3 && <FormPlanning methods={methods} />}
-
-          <div className="flex justify-end space-x-2">
-            {step > 1 && (
+          <motion.div
+            className="flex justify-end space-x-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            {step < 4 && step > 1 && step !== 4 && (
               <Button variant="secondary" type="button" onClick={onPrevious}>
                 Précédent
               </Button>
             )}
-            <Button variant="secondary" type="submit">
-              {step < 3 ? "Suivant" : "Soumettre"}
-            </Button>
-          </div>
+            {step < 4 && (
+              <Button variant="secondary" type="submit">
+                {step < 3 ? "Suivant" : "Soumettre"}
+              </Button>
+            )}
+          </motion.div>
         </form>
       </FormProvider>
+      {step === 4 && (
+        <div className="flex justify-center items-center ">
+          <p className="text-gray-500 py-40">
+            Merci pour votre demande, je reviendrai vers vous dans les plus
+            brefs délais.
+          </p>
+        </div>
+      )}
+      {step === 5 && (
+        <div className="flex justify-center items-center">
+          <p className="text-gray-500 py-40">
+            Un probleme est survenu lors de l'envoi de votre demande, veuillez
+            réessayer plus tard.
+          </p>
+        </div>
+      )}
     </div>
   );
 }

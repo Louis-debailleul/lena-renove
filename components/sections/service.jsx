@@ -66,21 +66,30 @@ export default function Service() {
 
   return (
     <Section>
-      <h2 className="text-center text-4xl mb-6">PRESTATION</h2>
-      <ContentTextDecor className="pb-6">
-        Avec plus de dix ans d'expérience, je vous accompagne,{" "}
-        <HighlightString>particuliers et professionnels</HighlightString>, dans
-        vos projets de rénovation. Que ce soit pour un{" "}
-        <HighlightString>petit rafraîchissement</HighlightString> ou{" "}
-        <HighlightString>un grand chantier</HighlightString>, je mets mon
-        savoir-faire au service de votre image.
+      <h2 className="text-center text-4xl pb-6 text-primary-200 text-shadow-lg/30">
+        PRESTATION
+      </h2>
+      <ContentTextDecor className="pb-9">
+        Avec plus de dix ans d'expérience, je vous accompagne, particuliers et
+        professionnels, dans vos projets de rénovation. Que ce soit pour un{" "}
+        petit rafraîchissement ou un grand chantier, je mets mon savoir-faire au
+        service de votre image.
       </ContentTextDecor>
+      <div className="absolute z-0 -bottom-60 -left-60 rotate-45">
+        <Image
+          src="/images/crayon.png"
+          alt="Rouleau de peinture"
+          width={543}
+          height={542.39}
+          priority
+        />
+      </div>
 
       <div className="flex flex-wrap justify-center xl:justify-between gap-4">
         {prestation.map((item, index) => (
           <Card
             key={index}
-            className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1rem)] xl:w-[calc(20%-1rem)] max-w-72 overflow-hidden"
+            className="shadow w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1rem)] xl:w-[calc(20%-1rem)] max-w-72 overflow-hidden border-0"
           >
             <div className="relative w-full h-40">
               {item.new && <NewBadge />}
@@ -94,9 +103,9 @@ export default function Service() {
               />
             </div>
             <CardHeader>
-              <CardTitle className="uppercase text-lg">{item.title}</CardTitle>
+              <CardTitle className="uppercase text-xl">{item.title}</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="text-gray-100">
               <p>{item.content}</p>
             </CardContent>
 

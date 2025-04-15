@@ -26,7 +26,7 @@ const NewBadge = () => {
         margin: "-40% 0px -40% 0px",
       }}
       variants={badgeVariants}
-      className="absolute z-10 top-0 left-0 bg-secondary text-white px-3 py-1 rounded-br-lg text-md font-medium shadow-lg "
+      className="absolute z-10 top-0 left-0 bg-secondary text-white px-3 py-1 rounded-br-lg text-md font-medium shadow "
     >
       Nouveau
     </motion.span>

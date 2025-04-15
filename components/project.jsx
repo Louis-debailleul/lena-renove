@@ -19,17 +19,17 @@ const Project = () => {
   };
 
   return (
-    <div className="mx-auto shadow-lg rounded-lg bg-primary p-3 sm:p-4 lg:p-6 w-full lg:w-10/12">
+    <div className="mx-auto shadow rounded-lg bg-primary p-3 sm:p-4 lg:p-6 w-full lg:w-10/12">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="rounded-lg flex justify-center lg:ml-[-100px] overflow-hidden">
           <AfterBefore
             afterImage="/images/project/p1.png"
             beforeImage="/images/project/p2.png"
-            className="w-full"
+            className="w-full shadow"
           />
         </div>
 
-        <div className="flex flex-col justify-center p-6">
+        <div className="flex flex-col justify-center p-3 lg:p-6">
           <h2 className="text-2xl font-bold mb-3 order-1">
             Projet de chambre et salle de bain
           </h2>

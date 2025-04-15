@@ -24,12 +24,21 @@ Passionnée par la rénovation, l'architecture  et le travail bien fait ! Je ré
   return (
     <Section>
       {/* Version mobile-first avec image portrait */}
+      <div className="absolute z-0 bottom-[-275px] right-[-159px]">
+        <Image
+          src="/images/métre.png"
+          alt="Rouleau de peinture"
+          width={543}
+          height={542.39}
+          priority
+        />
+      </div>
       <div className="flex flex-col relative lg:max-w-screen-lg mx-auto">
         {/* Image portrait - optimisée pour différentes tailles d'écran */}
 
-        <div className="sm:flex sm:flex-row-reverse items-center lg:items-start">
+        <div className="sm:flex sm:flex-row-reverse lg:items-start">
           <div className="mb-6 sm:w-2/4 lg:w-3/5">
-            <h2 className="text-2xl sm:text-5xl font-semibold pl-3 lg:text-3xl">
+            <h2 className="text-4xl sm:text-5xl font-semibold pl-3 lg:text-3xl text-primary-200">
               {profil.title}
             </h2>
             <div
@@ -41,7 +50,7 @@ Passionnée par la rénovation, l'architecture  et le travail bien fait ! Je ré
             <Image
               src="/images/photoLena.png"
               alt="enduits fais par Léna Rénove"
-              className="sm:rounded-tl-[50px] object-cover object-top w-full h-full"
+              className="rounded-lg sm:rounded-tl-[50px] object-cover object-top w-full h-full"
               priority
               layout="fill"
               decoding="async"
@@ -49,13 +58,14 @@ Passionnée par la rénovation, l'architecture  et le travail bien fait ! Je ré
           </div>
         </div>
 
-        <div className="relative w-z-10 flex w-4/5 ml-[20%] -mt-10 p-3 lg:p-6 text-center text-lg lg:text-xl bg-primary sm:rounded-br-[50px] shadow-sm items-center justify-evenly">
+        <div className="relative shadow w-z-10 flex w-4/5 mx-auto sm:ml-[20%] -mt-10 p-3 lg:p-6 text-center text-lg lg:text-xl bg-primary sm:rounded-br-[50px] items-center justify-evenly">
           <span className="font-bold">
-            10 ans <br /> d'expérience
+            <span className="text-primary-200">10 ans</span> <br /> d'expérience
           </span>
           <Separator orientation="vertical" className="h-10 bg-gray-200" />
           <span className="font-bold">
-            + 200 <br /> projets réalisés
+            <span className="text-primary-200">+ 200</span> <br /> projets
+            réalisés
           </span>
         </div>
 

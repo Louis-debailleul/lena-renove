@@ -15,7 +15,7 @@ export default function ImgContent({ children, imgName, className }) {
       </div>
 
       {/* Contenu au-dessus de l'image */}
-      <div className="relative z-10 w-full max-w-screen-2xl mx-auto h-full p-6">
+      <div className="relative z-10 w-full max-w-screen-2xl mx-auto h-full p-6 flex items-center">
         {children}
       </div>
     </div>
