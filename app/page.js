@@ -5,7 +5,6 @@ import ImgContent from "../components/imgContent";
 import Reviews from "../components/sections/reviews";
 import Projects from "../components/sections/projects";
 import { GradualSpacing } from "../components/animations/gradualSpacing";
-
 export default function Home() {
   return (
     <div className="mx-auto px-4 lg:px-6">
@@ -20,6 +19,7 @@ export default function Home() {
       <Service />
       <Profil />
       <Projects />
+
       <Reviews />
       <Step />
     </div>

@@ -48,7 +48,7 @@ Passionnée par la rénovation, l'architecture  et le travail bien fait ! Je ré
           </div>
           <div className="relative z-0 w-full sm:w-2/4 lg:w-2/5 h-[331px] lg:h-[390px]  mx-auto  max-w-sm">
             <Image
-              src="/images/photoLena.png"
+              src="/images/profil2.jpeg"
               alt="enduits fais par Léna Rénove"
               className="rounded-lg sm:rounded-tl-[50px] object-cover object-top w-full h-full"
               priority

@@ -15,7 +15,7 @@ import NewBadge from "../animations/newBadge";
 export default function Service() {
   const prestation = [
     {
-      img: "/images/enduit.png",
+      img: "/images/enduit.jpeg",
       alt: "enduits fais par Léna Rénove",
       imgWidth: 247,
       imgHeight: 127,
@@ -24,7 +24,7 @@ export default function Service() {
         "Réalisation d'enduits de réparations jusqu'aux enduits de finitions",
     },
     {
-      img: "/images/peinture.png",
+      img: "/images/peinture.jpeg",
       alt: "peinture fais par Léna Rénove",
       imgWidth: 247,
       imgHeight: 127,
@@ -33,18 +33,18 @@ export default function Service() {
         "Mise en oeuvre de peinture manuel ou mécanique. Pour des finitions soignés et des délais obtimisés",
     },
     {
-      img: "/images/film.png",
+      img: "/images/film.jpeg",
       alt: "Films architectural fais par Léna Rénove",
       imgWidth: 247,
       imgHeight: 127,
-      title: "films architectural",
+      title: "Films architectural",
       content:
-        "rénovation de toutes les surfaces :  Meubles,  PVC,  verre, bois, métal et plâtre ",
+        "Rénovation de toutes les surfaces :  Meubles,  PVC,  verre, bois, métal et plâtre ",
       footer: "En savoir plus",
       new: 1,
     },
     {
-      img: "/images/revetement.png",
+      img: "/images/revetement.jpeg",
       alt: "Revêtement muraux fais par Léna Rénove",
       imgWidth: 247,
       imgHeight: 127,
@@ -67,7 +67,7 @@ export default function Service() {
   return (
     <Section>
       <h2 className="text-center text-4xl pb-6 text-primary-200 text-shadow-lg/30">
-        PRESTATION
+        Mes Prestations
       </h2>
       <ContentTextDecor className="pb-9">
         Avec plus de dix ans d'expérience, je vous accompagne, particuliers et
@@ -103,7 +103,7 @@ export default function Service() {
               />
             </div>
             <CardHeader>
-              <CardTitle className="uppercase text-xl">{item.title}</CardTitle>
+              <CardTitle className="text-xl">{item.title}</CardTitle>
             </CardHeader>
             <CardContent className="text-gray-100">
               <p>{item.content}</p>

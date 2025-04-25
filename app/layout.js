@@ -29,10 +29,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className={`${lora.className} antialiased overflow-x-hidden`}>
-        <main className="text-lg">
-          <MainNav />
-          {children}
+      <body className={`${lora.className} antialiased`}>
+        <MainNav />
+
+        <main className="text-lg overflow-x-hidden">
+          <div className="">{children}</div>
+
           <Footer />
         </main>
       </body>

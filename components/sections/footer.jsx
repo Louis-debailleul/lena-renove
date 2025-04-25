@@ -3,7 +3,7 @@ import MultiStepForm from "../quiz/multiStepForm";
 import Section from "./section";
 export default function Footer() {
   return (
-    <footer className="relative">
+    <footer className="relative overflow-x-hidden">
       <Section className="pb-0 lg:pb-28 max-w-full">
         <div className="absolute z-0 -top[10px} -right-[100px] h-[598px] w-[423px]">
           <Image
