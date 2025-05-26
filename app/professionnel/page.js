@@ -7,7 +7,7 @@ import DoubleChecklist from "../../components/sections/sections/doubleChecklist"
 import IdeeUtilisation from "../../components/sections/sections/ideeUtilisation";
 import EtudesCoverstyle from "../../components/sections/sections/edudesCoverstyle";
 import Hero from "../../components/sections/sections/hero";
-
+import Projects from "../../components/sections/sections/projects";
 export default function Professionnel() {
   const prestation = [
     {
@@ -89,6 +89,7 @@ export default function Professionnel() {
       <DoubleChecklist />
       <IdeeUtilisation />
       <EtudesCoverstyle />
+      <Projects />
       <Step />
       <Reviews />
       <MultiStepForm />
