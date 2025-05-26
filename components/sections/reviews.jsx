@@ -12,7 +12,7 @@ const Reviews = () => {
         <FormatQuoteIcon fontSize="inherit" className="text-primary-100" />
       </div>
       <div className="flex justify-center items-center xl:items-stretch  flex-col xl:flex-row gap-4 px-5">
-        <div className="w-full max-w-lg p-6 flex flex-col xl:w-1/3 relative bg-white rounded-xl shadow">
+        <div className="w-full lg:w-1/3 max-w-lg p-6 flex flex-col xl:w-1/3 relative bg-white rounded-xl shadow">
           <div className="flex items-center gap-2  ">
             <Avatar>
               {<AvatarImage src="/images/reviewsProfil2.jpg" />}
@@ -33,7 +33,7 @@ const Reviews = () => {
             J'adore. Beau travail !!!! A très vite.
           </p>
         </div>
-        <div className=" max-w-lg p-6 flex flex-col xl:w-1/3 relative bg-white rounded-xl shadow">
+        <div className="w-full lg:w-1/3 max-w-lg p-6 flex flex-col xl:w-1/3 relative bg-white rounded-xl shadow">
           <div className="flex items-center gap-2 ">
             <Avatar>
               <AvatarImage src="/images/reviewsProfil1.jpg" />
@@ -56,7 +56,7 @@ const Reviews = () => {
             <br /> A très vite
           </p>
         </div>
-        <div className="max-w-lg p-6 flex flex-col xl:w-1/3 relative bg-white rounded-xl shadow">
+        <div className="w-full lg:w-1/3 max-w-lg p-6 flex flex-col xl:w-1/3 relative bg-white rounded-xl shadow">
           <div className="flex items-center gap-2">
             <Avatar>
               <AvatarImage src="/images/reviewsProfil3.jpg" />

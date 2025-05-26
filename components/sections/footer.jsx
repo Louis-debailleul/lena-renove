@@ -1,6 +1,6 @@
 import Image from "next/image";
 import MultiStepForm from "../quiz/multiStepForm";
-import Section from "./section";
+import Section from "./sections/section";
 export default function Footer() {
   return (
     <footer className="relative overflow-x-hidden">

@@ -14,7 +14,7 @@ const CustomRadioGroup = ({ name, value, onChange, options, className }) => {
           key={option.value}
           className={`space-y-0  flex items-center w-fit rounded-md p-2 cursor-pointer ${
             value === option.value
-              ? "border-2 border-secondary bg-secondary"
+              ? "border-2 border-secondary bg-secondary text-white"
               : "border-2 border-gray-100"
           }`}
         >

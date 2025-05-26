@@ -1,14 +1,29 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import { Playfair_Display, Open_Sans, Meddon } from "next/font/google";
 import "./globals.css";
 import Footer from "../components/sections/footer";
 import MainNav from "../components/mainNav";
-import { Lora } from "next/font/google";
 
-const lora = Lora({
+const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
   display: "swap",
+  variable: "--font-playfair",
+});
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-opensans",
+});
+
+const meddon = Meddon({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+  variable: "--font-meddon",
 });
 
 const geistSans = Geist({
@@ -29,14 +44,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className={`${lora.className} antialiased`}>
-        <MainNav />
-
-        <main className="text-lg overflow-x-hidden">
-          <div className="">{children}</div>
-
-          <Footer />
-        </main>
+      <div className="grid-overlay"></div>
+      <body
+        className={`${playfair.variable} ${openSans.variable} ${meddon.variable} antialiased`}
+      >
+        <main>{children}</main>
       </body>
     </html>
   );

@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import {
   NavigationMenu,
   NavigationMenuLink,
@@ -11,30 +12,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function MainNav() {
-  const [scrollY, setScrollY] = useState(0);
+  const pathname = usePathname();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const isScrolled = scrollY >= 40;
+  console.log(pathname);
 
   return (
-    <div
-      className={`mx-auto top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-sm sticky" : "md:max-w-screen-xl md:px-12"
-      }`}
-    >
+    <div className={`mx-auto z-50 w-full bg-primary-100`}>
       <NavigationMenu
-        className={`md:-mb-10 py-2 md:mt-5 max-w-screen-xl flex w-full justify-between bg-primary mx-auto transition-all duration-300 ${
-          isScrolled
-            ? "shadow-none px-4 lg:px-6 xl:px-0"
-            : "md:rounded-full md:shadow px-4"
-        }`}
+        className={`flex w-full justify-between mx-auto max-w-[100%] px-4 md:px-6`}
       >
         <Link href="#projects" className="sm:block hidden h-16">
           <Image
@@ -44,7 +29,7 @@ export default function MainNav() {
             width={391}
             height={465}
             decoding="async"
-            className={`mx-auto xl:m-0 transition-all duration-300 w-full h-full object-contain hover:scale-105`}
+            className={`mx-auto xl:m-0  w-full h-full object-contain hover:scale-105`}
             quality={90}
           />
         </Link>
@@ -56,19 +41,23 @@ export default function MainNav() {
             width={50}
             height={50}
             decoding="async"
-            className={`transition-all duration-300 w-full h-full object-contain hover:scale-110`}
+            className={` w-full h-full object-contain hover:scale-110`}
             quality={85}
           />
         </Link>
-        <NavigationMenuList className="flex justify-end space-x-4 text-sm sm:text-base md:text-xl font-bold">
+        <NavigationMenuList className="flex justify-end space-x-4 text-sm sm:text-base md:text-xl">
           <NavigationMenuItem>
             <Link href="#projects">Réalisations</Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="#skills">Professionnel</Link>
+            {pathname === "/professionnel" ? (
+              <Link href="/particulier">Particulier</Link>
+            ) : (
+              <Link href="/professionnel">Professionnel</Link>
+            )}
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Button className="bg-secondary rounded-full">
+            <Button className="">
               <Link
                 href="#contact"
                 className="NavigationMenuLink text-sm md:text-xl flex items-center gap-2"

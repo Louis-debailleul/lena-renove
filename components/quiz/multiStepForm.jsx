@@ -26,6 +26,7 @@ import FormProjectDetails from "./formProjectDetails";
 import CustomRadioGroup from "../ui/customRadioGroup";
 import { OtherHouses } from "@mui/icons-material";
 import FormPlanning from "./formPlanning";
+import Section from "../sections/sections/section";
 // Schémas de validation Zod pour chaque étape
 export const step1Schema = z
   .object({
@@ -250,7 +251,11 @@ function MultiStepForm() {
   };
 
   return (
-    <div className="w-full relative mx-auto">
+    <Section
+      colors={["bg-primary", "bg-secondary", "bg-white"]}
+      className="relative mx-auto py-4 px-2"
+      childClassName="max-w-3xl w-auto md:mx-auto min-w-80 px-2 py-8 md:p-6"
+    >
       {step > 1 && step <= 4 && <StepBar currentStep={step} />}
       {step === 1 && (
         <motion.div
@@ -258,10 +263,14 @@ function MultiStepForm() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-2xl font-bold mb-3">
+          <h2
+            className="text-primary mb-6  
+           text-4xl/9  
+           md:text-5xl"
+          >
             Contacter moi en quelques clics
           </h2>
-          <p className="text-gray-500 max-w-[600px] mx-auto mb-6">
+          <p className="max-w-[60ch] text-secondary mb-8">
             Prenez quelques secondes pour remplir ce questionnaire rapide. Il me
             permettra de mieux comprendre vos besoins et de vous faire gagner du
             temps pour la suite de votre projet. Grâce à ces informations, je
@@ -300,12 +309,12 @@ function MultiStepForm() {
             transition={{ delay: 0.3 }}
           >
             {step < 4 && step > 1 && step !== 4 && (
-              <Button variant="secondary" type="button" onClick={onPrevious}>
+              <Button className="bg-primary" type="button" onClick={onPrevious}>
                 Précédent
               </Button>
             )}
             {step < 4 && (
-              <Button variant="secondary" type="submit">
+              <Button className="bg-primary" type="submit">
                 {step < 3 ? "Suivant" : "Soumettre"}
               </Button>
             )}
@@ -328,7 +337,7 @@ function MultiStepForm() {
           </p>
         </div>
       )}
-    </div>
+    </Section>
   );
 }
 
