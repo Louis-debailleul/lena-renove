@@ -44,7 +44,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <div className="grid-overlay"></div>
+      {/* <div className="grid-overlay"></div> */}
       <body
         className={`${playfair.variable} ${openSans.variable} ${meddon.variable} antialiased`}
       >
