@@ -12,7 +12,7 @@ const Section = React.forwardRef(
     return (
       <section
         className={cn(
-          "w-full px-4 md:px-6 md:py-16 py-12",
+          "w-full px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20 xl:py-24",
           sectionColor,
           className
         )}
@@ -25,7 +25,7 @@ const Section = React.forwardRef(
 
         <div
           className={cn(
-            "relative w-full z-10 max-w-screen-2xl mx-auto",
+            "relative w-full z-10 max-w-7xl mx-auto",
             secondDivColor,
             childClassName
           )}

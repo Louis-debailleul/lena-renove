@@ -5,9 +5,10 @@ import Reviews from "../../components/sections/sections/reviews";
 import SectionImageText from "../../components/sections/sections/sectionImageText";
 import DoubleChecklist from "../../components/sections/sections/doubleChecklist";
 import IdeeUtilisation from "../../components/sections/sections/ideeUtilisation";
-import EtudesCoverstyle from "../../components/sections/sections/edudesCoverstyle";
+import EtudesCoverstyle from "../../components/sections/sections/etudesCoverstyle";
 import Hero from "../../components/sections/sections/hero";
 import Projects from "../../components/sections/sections/projects";
+
 export default function Professionnel() {
   const prestation = [
     {
@@ -59,47 +60,48 @@ export default function Professionnel() {
     },
     // Vous pouvez ajouter d'autres prestations ici
   ];
-  return (
-    <>
-      <Hero page="professionnel" />
-      {/*    <MainNav /> */}
-      <Service />
-      <SectionImageText
-        title="COVERING"
-        text="L'arme secrète des pros pour rénover sans contrainte. Modernisez vos espaces, sans interrompre votre activité."
-        image="/images/hall.png"
-        bgColor="bg-primary"
-        textColor="text-white"
-      />
-      <SectionImageText
-        title="MON A TOUT POUR LES PROS"
-        text="Le covering, c'est un revêtement adhésif haut de gamme imitant le bois, marbre, métal ou cuir. Pose rapide, sans bruit ni poussière, sans travaux lourds."
-        image="/images/hotelAP.png"
-        reverse
-        bgColor="bg-primary-100"
-        textColor="text-primary"
-      />
-      <SectionImageText
-        title="POURQUOI CHOISIR CETTE SOLUTION ?"
-        text="Gagnez du temps, réduisez vos coûts et sublimez vos lieux sans fermer vos portes. Donnez une seconde vie à vos espaces en toute simplicité."
-        image="/images/meubleAP.png"
-        bgColor="bg-secondary"
-        textColor="text-white"
-      />
-      <DoubleChecklist />
-      <IdeeUtilisation />
-      <EtudesCoverstyle />
-      <Projects />
-      <Step />
-      <Reviews />
-      <MultiStepForm />
 
-      {/*    <Service />
-      <Profil />
-      <Projects />
-      <Step />
-      <Reviews />
-      <MultiStepForm /> */}
-    </>
+  return (
+    <div className="min-h-screen bg-white">
+      <Hero page="professionnel" />
+
+      {/* Espacement amélioré entre les sections */}
+      <div className="space-y-0">
+        <Service />
+
+        <SectionImageText
+          title="Covering"
+          text="L'arme secrète des pros pour rénover sans contrainte. Modernisez vos espaces, sans interrompre votre activité."
+          image="/images/hall.png"
+          bgColor="bg-primary"
+          textColor="text-white"
+        />
+
+        <SectionImageText
+          title="Mon atout pour les pros"
+          text="Le covering, c'est un revêtement adhésif haut de gamme imitant le bois, marbre, métal ou cuir. Pose rapide, sans bruit ni poussière, sans travaux lourds."
+          image="/images/hotelAP.png"
+          reverse
+          bgColor="bg-primary-100"
+          textColor="text-primary"
+        />
+
+        <SectionImageText
+          title="Pourquoi choisir cette solution ?"
+          text="Gagnez du temps, réduisez vos coûts et sublimez vos lieux sans fermer vos portes. Donnez une seconde vie à vos espaces en toute simplicité."
+          image="/images/meubleAP.png"
+          bgColor="bg-secondary"
+          textColor="text-white"
+        />
+
+        <DoubleChecklist />
+        <IdeeUtilisation />
+        <EtudesCoverstyle />
+        <Projects />
+        <Step />
+        <Reviews />
+        <MultiStepForm />
+      </div>
+    </div>
   );
 }

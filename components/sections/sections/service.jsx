@@ -63,7 +63,9 @@ export default function Service() {
   return (
     <Section className="pl-6 pr-0 md:pr-0 lg:px-6">
       <div className="lg:hidden pr-6 md:pr-6 xl:pr-0 mb-8">
-        <h2 className="text-primary text-4xl mb-4">PRESTATION</h2>
+        <h2 className="text-primary text-3xl md:text-4xl lg:text-5xl font-playfair mb-4">
+          Préstations
+        </h2>
         <p className="text-lg">
           Des intérieurs qui vous mettent en valeur, grâce à un travail durable
           et soigné. Peinture, enduits, papier peint ou pose de films adhésifs
@@ -73,8 +75,10 @@ export default function Service() {
       </div>
       <div className="flex flex-row overflow-x-auto snap-x snap-mandatory lg:grid lg:grid-cols-3 lg:overflow-visible gap-4 pb-6">
         <div className="hidden lg:block pr-0 md:pr-0 mb-4">
-          <h2 className="text-primary text-4xl mb-4">PRESTATION</h2>
-          <p className="text-lg">
+          <h2 className="text-primary text-3xl md:text-4xl lg:text-5xl font-playfair mb-4">
+            Préstations
+          </h2>
+          <p className="text-lg pr-4">
             Des intérieurs qui vous mettent en valeur, grâce à un travail
             durable et soigné. Peinture, enduits, papier peint ou pose de films
             adhésifs sur tous supports : en neuf comme en rénovation, Léna
@@ -84,7 +88,7 @@ export default function Service() {
         {prestation.map((item, index) => (
           <Card
             key={index}
-            className="flex w-full flex-row min-w-80  h-auto snap-center rounded-none"
+            className="flex w-full flex-row min-w-80  h-auto snap-center shadow-sm rounded-sm"
           >
             <div className="w-1/3">
               <Image

@@ -1,54 +1,93 @@
+"use client";
 import Section from "./section";
+import { motion } from "framer-motion";
 
 export default function Step() {
   const steps = [
     {
-      icon: "quiz",
-      title: "Tout commence par un QCM rapide",
-      content: `  Définissez les grandes lignes de votre projet en quelques minutes avec notre QCM rapide et intuitif.
-               `,
+      id: 1,
+      title: "QCM Rapide",
+      content:
+        "Définissez les grandes lignes de votre projet en quelques minutes.",
     },
     {
-      icon: "phone_forwarded",
-      title: "Contact Direct et Précis",
-      content: `  Pour l'étape du premier contact téléphonique visant à affiner les détails de la demande.
-               `,
+      id: 2,
+      title: "Contact Direct",
+      content:
+        "Premier contact téléphonique pour affiner les détails de votre demande.",
     },
     {
-      icon: "home_pin",
+      id: 3,
       title: "Rendez-vous",
-      content: ` Pour la rencontre sur le site du projet afin d'évaluer les besoins spécifiques.
-               `,
+      content:
+        "Rencontre sur le site du projet pour évaluer les besoins spécifiques.",
     },
     {
-      icon: "receipt_long",
-      title: "Élaboration Du devis",
-      content: `Pour l'élaboration d'un devis qui répond précisément aux attentes du client.
-               `,
+      id: 4,
+      title: "Devis Détaillé",
+      content: "Élaboration d'un devis personnalisé qui répond à vos attentes.",
     },
-    // Vous pouvez ajouter d'autres prestations ici
   ];
 
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  };
+
   return (
-    <Section className="bg-primary-100">
-      <h2 className="text-primary text-4xl mb-12">
-        LES ETAPES DE VOTRE PROJET
-      </h2>
-      <div className="flex flex-row overflow-x-auto snap-x snap-mandatory lg:flex-wrap  lg:overflow-visible  gap-4 lg:gap-6 pb-6">
-        {steps.map((item, index) => (
-          <div className="max-w-md min-w-80 lg:max-w-xs mx-auto">
-            <span className="text-primary text-6xl block text-center font-meddon mb-6">
-              0{index + 1}
-            </span>
-            <h3 className="text-primary text-2xl md:text-3xl xl:text-4xl ">
-              {item.title}
+    <Section
+      className="py-12 md:py-16 lg:py-20 bg-primary-100"
+      childClassName="max-w-6xl w-full mx-auto  lg:px-8"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mb-12 md:mb-16"
+      >
+        <h2 className="text-primary text-3xl md:text-4xl lg:text-5xl font-playfair mb-4">
+          Les étapes de votre projet
+        </h2>
+      </motion.div>
+
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 pb-4 md:pb-0 scrollbar-hide"
+      >
+        {steps.map((step) => (
+          <motion.div
+            key={step.id}
+            variants={item}
+            className="text-center flex-shrink-0 w-72 md:w-auto"
+          >
+            <div className="text-primary text-5xl md:text-6xl font-playfair font-bold mb-4">
+              0{step.id}
+            </div>
+
+            <h3 className="text-primary text-xl md:text-2xl font-playfair font-semibold mb-3">
+              {step.title}
             </h3>
-            <p className="text-lg max-w-[60ch] text-secondary">
-              {item.content}
+
+            <p className="text-secondary text-base leading-relaxed">
+              {step.content}
             </p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </Section>
   );
 }

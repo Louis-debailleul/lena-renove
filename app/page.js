@@ -6,7 +6,7 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center h-screen bg-primary-100">
       <div className="text-center h-1/3 flex flex-col items-center justify-center p-6">
         <Image
-          src="/images/logoMoyenCouleur.png"
+          src="/images/logoGrandCouleur.svg"
           alt="Logo Léna Rénove"
           priority
           width={391}
