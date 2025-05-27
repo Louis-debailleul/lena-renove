@@ -88,7 +88,7 @@ export default function Service() {
         {prestation.map((item, index) => (
           <Card
             key={index}
-            className="flex w-full flex-row min-w-80  h-auto snap-center shadow-sm rounded-sm"
+            className="flex bg-primary-100 w-full flex-row min-w-80  h-auto snap-center shadow-sm rounded-sm"
           >
             <div className="w-1/3">
               <Image
