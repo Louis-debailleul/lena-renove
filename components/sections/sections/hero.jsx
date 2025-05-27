@@ -8,7 +8,9 @@ export default function Hero({ page = "particulier" }) {
     <div className="relative w-full h-[100vh] max-h-[650px] flex items-center justify-center bg-white mb-8 md:mb-16 lg:mb-20">
       <Image
         src={
-          page === "particulier" ? "/images/particulier.png" : "/images/pro.png"
+          page === "particulier"
+            ? "/images/particuliers.png"
+            : "/images/pro.png"
         }
         alt="hero"
         fill
