@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, Suspense } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -469,4 +469,28 @@ function MultiStepForm() {
   );
 }
 
-export default MultiStepForm;
+// Composant wrapper avec Suspense
+function MultiStepFormWrapper() {
+  return (
+    <Suspense
+      fallback={
+        <Section id="contact" className="bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-8">
+              <h2 className="heading-lg text-primary mb-4">
+                Demande de devis gratuit
+              </h2>
+              <p className="text-responsive text-secondary max-w-2xl mx-auto">
+                Chargement du formulaire...
+              </p>
+            </div>
+          </div>
+        </Section>
+      }
+    >
+      <MultiStepForm />
+    </Suspense>
+  );
+}
+
+export default MultiStepFormWrapper;
