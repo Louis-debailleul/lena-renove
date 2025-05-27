@@ -3,60 +3,82 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-primary-100">
-      <div className="text-center h-1/3 flex flex-col items-center justify-center p-6">
-        <Image
-          src="/images/logoGrandCouleur.svg"
-          alt="Logo Léna Rénove"
-          priority
-          width={391}
-          height={465}
-          decoding="async"
-          className="mx-auto w-2/3"
-          quality={90}
-        />
-        <p className="text-center lg:text-4xl text-2xl font-playfair text-primary">
-          Ensemble, redonnonsdu style au durable !
-        </p>
+    <div className="min-h-screen bg-primary-100 flex flex-col">
+      {/* Section du logo et titre */}
+      <div className="flex-1 flex flex-col items-center justify-center px-4 py-8 md:py-12 lg:py-16">
+        <div className="text-center max-w-4xl mx-auto">
+          <Image
+            src="/images/logoGrandCouleur.svg"
+            alt="Logo Léna Rénove"
+            priority
+            width={391}
+            height={465}
+            decoding="async"
+            className="mx-auto w-48 sm:w-56 md:w-64 lg:w-80 xl:w-96 h-auto"
+            quality={90}
+          />
+          <p className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-playfair text-primary mt-4 md:mt-6 lg:mt-8 leading-tight px-2">
+            Ensemble, redonnons du style au durable !
+          </p>
+        </div>
       </div>
-      <div className="flex flex-row h-2/3 w-full">
-        <Link className="w-1/2 h-full relative" href="/particulier">
+
+      {/* Section des liens */}
+      <div className="flex flex-col md:flex-row min-h-[50vh] md:min-h-[60vh]">
+        <Link
+          className="flex-1 relative group overflow-hidden"
+          href="/particulier"
+        >
           <Image
             src="/images/particulier.png"
-            alt="Logo"
+            alt="Section Particulier"
             width={723}
-            className="h-full object-cover object-center w-full"
             height={348}
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
-          <span className="font-playfair flex flex-row items-baseline gap-2 text-white lg:text-4xl xl:text-5xl text-2xl absolute bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2">
-            Particulier
-            <Image
-              src="/images/arrow.png"
-              alt="Logo"
-              width={24}
-              height={24}
-              className="w-12"
-            />
-          </span>
+          {/* Overlay pour améliorer la lisibilité */}
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300"></div>
+
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="font-playfair flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center px-4 drop-shadow-lg">
+              Particulier
+              <Image
+                src="/images/arrow.png"
+                alt="Flèche"
+                width={24}
+                height={24}
+                className="w-6 sm:w-8 md:w-10 lg:w-12 h-auto transition-transform group-hover:translate-x-1"
+              />
+            </span>
+          </div>
         </Link>
-        <Link className="w-1/2 relative h-full" href="/professionnel">
+
+        <Link
+          className="flex-1 relative group overflow-hidden"
+          href="/professionnel"
+        >
           <Image
             src="/images/pro.png"
-            alt="Logo"
+            alt="Section Professionnel"
             width={723}
             height={348}
-            className="h-full  object-cover object-center w-full"
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
-          <span className="font-playfair flex flex-row items-baseline gap-2 text-white lg:text-4xl xl:text-5xl text-2xl absolute bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2">
-            Professionnel
-            <Image
-              src="/images/arrow.png"
-              alt="Logo"
-              width={24}
-              height={24}
-              className="w-12"
-            />
-          </span>
+          {/* Overlay pour améliorer la lisibilité */}
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300"></div>
+
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="font-playfair flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center px-4 drop-shadow-lg">
+              Professionnel
+              <Image
+                src="/images/arrow.png"
+                alt="Flèche"
+                width={24}
+                height={24}
+                className="w-6 sm:w-8 md:w-10 lg:w-12 h-auto transition-transform group-hover:translate-x-1"
+              />
+            </span>
+          </div>
         </Link>
       </div>
     </div>
